@@ -2,12 +2,12 @@ import json
 import os
 from typing import Any, Dict
 
-from .Items import item_table, FlywrenchItem, create_flywrench_items
+from .Items import item_table, FlywrenchItem, create_flywrench_item, create_flywrench_items
 from .Locations import location_table, FlywrenchLocation
 from .Options import flywrench_options
 from .Rules import set_flywrench_rules
 from .Regions import create_flywrench_regions
-from BaseClasses import Tutorial
+from BaseClasses import ItemClassification, Tutorial
 from ..AutoWorld import World, WebWorld
 
 
@@ -48,6 +48,10 @@ class FlywrenchWorld(World):
 
     def create_regions(self):
         create_flywrench_regions(self.multiworld, self.player)
+
+    def create_item(self, name: str) -> FlywrenchItem:
+        # Currently assume all created items are filler (because they are. we only have space dust)
+        return create_flywrench_item(name, ItemClassification.filler,  self.player)
 
     def create_items(self):
         create_flywrench_items(self.multiworld, self.player)

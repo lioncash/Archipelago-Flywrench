@@ -16,12 +16,13 @@ class FlywrenchItem(Item):
 
 
 # Creates a particular Flywrench item identified by a name.
-def create_flywrench_item(name: str, player: int) -> FlywrenchItem:
+def create_flywrench_item(name: str, classification: ItemClassification, player: int) -> FlywrenchItem:
     item_id = item_table[name]
-    return FlywrenchItem(name, ItemClassification.progression, item_id, player)
+    return FlywrenchItem(name, classification, item_id, player)
 
 
 # Creates all the items for a particular flywrench world instance.
 def create_flywrench_items(multiworld: MultiWorld, player: int):
     # Every level needs to be beaten to beat Flywrench, so every level has one check.
-    multiworld.itempool += [create_flywrench_item(ITEM_SPACE_DUST, player) for _ in multiworld.get_locations()]
+    multiworld.itempool += [create_flywrench_item(ITEM_SPACE_DUST, ItemClassification.filler, player)
+                            for _ in multiworld.get_locations()]
