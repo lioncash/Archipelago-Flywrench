@@ -1,0 +1,24 @@
+1. Check out archipelago via git in a fork: https://github.com/ArchipelagoMW/Archipelago
+
+2. Place all of the files into its own folder in the worlds director
+   e.g. worlds/flywrench
+
+3. Make the client and make a mod patch to make flywrench work with archipelago (hard part)
+   NOTE: Consider looking at the undertale stuff in the repo, considering it also uses
+         GameMaker, like Flywrench. (so, the Undertale world folder and UndertaleClient.py in the root)
+
+         For modding and inspecting the game, use UndertaleModTool (https://github.com/krzys-h/UndertaleModTool/releases)
+         Despite the name, it's essentially THE GameMaker game inspection software. Also lets you add assets/functions/variables
+         etc and save and apply everything (very good for making a patch file to distribute with the randomizer if mods are needed)
+
+
+=== What the current code does ===
+
+Ideally the current code just sets up every level goal/warp to be a check.
+It adds no restrictions on the actual planet access.
+
+Ideally once the randomizing Just Works with that, then additional options can
+be added, like shuffling individual planet access into other people's worlds.
+
+This could also incorporate the rudimentary line randomizer that Sarth worked on as
+an option to the overall archipelago randomizer.
