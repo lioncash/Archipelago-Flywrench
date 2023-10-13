@@ -1,6 +1,6 @@
 import json
 import os
-from typing import Dict
+from typing import Any, Dict
 
 from .Items import item_table, FlywrenchItem, create_flywrench_items
 from .Locations import location_table, FlywrenchLocation
@@ -55,7 +55,7 @@ class FlywrenchWorld(World):
     def set_rules(self):
         set_flywrench_rules(self.multiworld, self.player)
 
-    def fill_slot_data(self) -> Dict[str, int]:
+    def fill_slot_data(self) -> Dict[str, Any]:
         # Fill in if we ever need custom slot data. For now this is unused.
         return {}
 
